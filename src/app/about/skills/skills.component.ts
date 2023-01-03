@@ -7,75 +7,78 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
+  // assets='./assets/' //for deployment
+  assets='../../../assets/' //for local
+
   skills=[
     {
       name:'html',
-      logo:'../../../assets/images/html.png',
+      logo:this.assets+'images/html.png',
       proficiency:''
     },
     {
       name:'css',
-      logo:'../../../assets/images/css.png',
+      logo:this.assets+'images/css.png',
       proficiency:''
     },
     {
       name:'javascript',
-      logo:'../../../assets/images/javascript.png',
+      logo:this.assets+'images/javascript.png',
       proficiency:''
     },
     {
       name:'react.js',
-      logo:'../../../assets/images/reactjs.png',
+      logo:this.assets+'images/reactjs.png',
       proficiency:''
     },
     {
       name:'angular',
-      logo:'../../../assets/images/angular.png',
+      logo:this.assets+'images/angular.png',
       proficiency:''
     },
     {
       name:'php',
-      logo:'../../../assets/images/php.png',
+      logo:this.assets+'images/php.png',
       proficiency:''
     },
     {
       name:'c++',
-      logo:'../../../assets/images/c.png',
+      logo:this.assets+'images/c.png',
       proficiency:''
     },
     {
       name:'python',
-      logo:'../../../assets/images/python.png',
+      logo:this.assets+'images/python.png',
       proficiency:''
     },
     {
       name:'java',
-      logo:'../../../assets/images/java.png',
+      logo:this.assets+'images/java.png',
       proficiency:''
     },
     {
       name:'Spring Boot',
-      logo:'../../../assets/images/springboot.png',
+      logo:this.assets+'images/springboot.png',
       proficiency:''
     },
     {
       name:'mongo DB',
-      logo:'../../../assets/images/mongodb.png',
+      logo:this.assets+'images/mongodb.png',
       proficiency:''
     },
     {
       name:'SQL',
-      logo:'../../../assets/images/sql.png',
+      logo:this.assets+'images/sql.png',
       proficiency:''
     },
     {
       name:'matlab',
-      logo:'../../../assets/images/matlab.png',
+      logo:this.assets+'images/matlab.png',
       proficiency:''
     },
     {
       name:'arduino',
-      logo:'../../../assets/images/arduino.png',
+      logo:this.assets+'images/arduino.png',
       proficiency:''
     }
   ]
