@@ -1,0 +1,13 @@
+<section class="skills">
+    <h1 class="heading"> <span>My</span> Skills </h1>
+    <div class="box-container">
+        <!-- <div id="tempBoxForTesting" class="box">
+            <div class="progressBar">
+                <div class="progressValue">3/10</div>
+            </div>
+        </div> -->
+
+        <app-skill-card [skill]="skill" *ngFor="let skill of skills"></app-skill-card>
+    </div>
+
+</section>

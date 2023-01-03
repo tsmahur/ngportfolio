@@ -1,0 +1,791 @@
+
+/* ---------- font : Poppins */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;5text-base-coloaa00;600;700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* ---------- global variables */
+:root {
+
+    /* base color */
+    --crimsonn: crimson;
+    --white: #ffffff;
+    --black: #0d0d0d;
+    --grey:#aaa;
+    --grey-fade:#1a1a1a;
+    --purple:#6058c9; /*230, 225, 245*/
+    --puprle_fade:#dddbf4;
+    --black_backdrop:rgb(35, 35, 35);
+
+    /* dark mode, same color are added in javascript */
+    --base-theme-color:var(--crimsonn); /*main theme color of page*/
+    --base-theme-color-backdrop:var(--black_backdrop);
+    --base-theme2-color:var(--white); /*text, icon*/
+    --base-theme3-color:var(--grey-fade); /*navbar*/
+
+    --base-backround-color:var(--black);
+    --hover-color:var(--white);
+
+    --text-hover-color:var(--black);
+    --box-hover-color:var(--grey);
+    --text-heading-color:var(--white);
+    --text-content-color:var(--grey);
+
+    /* dark and light mode is controlled from javascript */
+
+    --theme-transitiont-time:0.6s;
+    --hover-transitiont-time:0.3s
+
+  }
+
+
+/* ---------- html reset */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none; /*removing underline from links*/
+    font-family: 'Poppins', sans-serif;
+    
+    /* outline: none; */
+    /* border: none; */
+    /* text-transform: capitalize; */
+  }
+
+  html {
+    font-size: 62.5%; /*setting base root value, so the rem unit calculated based on this value only*/
+    overflow-x: hidden; /*disable horizontal scroll bar*/
+    /* scrollbar-color: rebeccapurple green; */ /*scroll bar formatting not working this way*/
+  }
+
+  /* ---------- base color of page */
+  body {
+    background: var(--base-backround-color);
+    /* background: conic-gradient(red, orange, yellow, green, blue,red); *//*Add this to see magic*/
+    padding-bottom: 6.5rem;/*to make space for navbar*/
+    transition: var(--theme-transitiont-time);
+  }
+
+
+  /* ---------- scroll bar formatting*/
+  html::-webkit-scrollbar {
+      width: 1rem;
+  }
+
+  html::-webkit-scrollbar-track {
+      background: var(--base-backround-color);
+  }
+
+  html::-webkit-scrollbar-thumb {
+      background: var(--base-theme-color);
+      border-radius: 5rem;
+  } 
+
+  .subscript{
+    font-size: 2.5rem;
+  }
+  /* LOGO */
+  .logo{
+    /* position: absolute;
+    left:0;
+    top:0; */
+    /* transform: scale(0.75); */
+    text-decoration: none;
+    cursor: pointer;
+    /* display: inline; */
+    text-align: center;
+    transition: var(--theme-transitiont-time);
+  }
+  .logo svg{
+    height: 5.5rem;
+  }
+  .logo svg g{
+    fill:var(--base-theme-color);
+  }
+  /* .logo:hover{
+    transform: scale(3.75);
+    filter: invert(1);
+    transition: transform var(--theme-transitiont-time);
+  } */
+/* ---- */
+
+  /* ---- Text Scroll -----*/
+  .scroll-box {
+    height: 40px;/*for best result prefer this height to similar to the font of element on which this is applied*/
+    overflow: hidden;/*to hide the extra data*/
+    position: relative;
+    display: inline-block;
+  }
+  /* shadow effect for top on scroll-box */
+  .scroll-box::before {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 15px;
+    position: absolute;
+    background: linear-gradient(180deg, var(--base-backround-color), rgba(246, 244, 244, 0));
+  }
+  /* shadow effect for bottom on scroll-box */
+  .scroll-box::after {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 15px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(246, 244, 244, 0), var(--base-backround-color));
+  }
+  .scroll-box ul {
+    margin: 0;
+    padding: 0;
+    animation: scrollUp 3s ease-in-out infinite normal;
+  }
+  .scroll-box ul li {
+    opacity: 1;
+    height: 40px;
+    /* padding: 10px;  */
+    list-style: none;
+  }
+  .scroll-box span{
+    padding: 0!important;/*resetting and overriding padding from span under content class*/
+  }
+ 
+
+
+  /* ---------- main section, effect on all pages */
+  section {
+    padding: 4.5rem 6%;
+  }
+  /* --------- top heading of page */
+  .heading {
+    text-align: center;
+    font-size: 6vw;
+    color: var(--text-heading-color);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    animation: expand .8s ease-in-out;
+    /* animation: expand 1.8s ease-in-out infinite; */
+  }
+  
+  .heading span {
+    text-transform: uppercase;
+    color: var(--base-theme-color);
+  }
+  
+  /* ---------- button */
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: var(--base-theme-color);
+    padding: .7rem;
+    font-size: 1.7rem;
+    color: var(--base-theme2-color);
+    padding-left: 2rem;
+  }
+  
+  /* button icon */
+  .btn i {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 1.7rem;
+    text-align: center;
+    background: var(--base-theme2-color); 
+    color: var(--base-theme-color);
+    border-radius: 50%;
+    margin-left: 1rem;
+    /* -webkit-transition: .2s linear; */
+    transition: .2s linear;
+  }
+  
+  .btn:hover i {
+    margin-left: 1.5rem;/*button icon move to right effect*/
+    animation: shakeAnimation 1.5s forwards;
+  }
+
+/* ---------- nav bar */
+.navbar {
+    /* move to bottom */
+    position: fixed;
+    bottom: 0;
+    /* left, right to fix the navbar full width horizontal alignment issue*/
+    left: 0;
+    right: 0;
+
+    display: flex;
+    z-index: 50; /*added as timeline class was coming over it*/
+    align-items: flex-end; /* fixed on hover issue: i.e, complete navbar was moving up onhoner instead of hovered <a> tag,
+                                Items are positioned at the end of the container*/
+  }
+  
+  .navbar a {
+    padding: 2rem;
+    font-size: 2rem;
+    background: var(--base-theme3-color);
+    flex: 1;
+    color: var(--base-theme2-color);
+    text-align: center;
+    transition: .2s linear;
+  }
+  
+  .navbar a i {
+    color: var(--base-theme-color);
+    padding-right: .5rem;
+  }
+  .active{
+    border-bottom: 0.2rem solid var(--base-theme2-color);
+    padding-bottom: 1.8rem !important; /* 2 - 0.2 = 1.8 */
+    /* border-radius: 5% 5% 0% 0%; */
+  }
+  
+  .navbar a:hover {
+    background: var(--base-theme-color);
+    /* padding-bottom: 6rem; */
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    border-radius: 45% 45% 0% 0%;
+    /* border-bottom: 1rem solid white; */
+    /* animation: shakeAnimation 0.5s forwards; */
+  }
+
+  /* .navbar a:hover span {
+    animation: shakeAnimation 0.5s forwards;
+    border: 3px solid yellow;
+  }
+   */
+  .navbar a:hover i {
+    color: var(--hover-color);
+    animation: rotate360Animation 1s forwards;
+  }
+
+
+/* ---------- home page css */
+.home {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    min-height: calc(100vh - 6.5rem);
+  }
+  
+  .home .image {
+    flex: 1 1 42rem;
+    text-align: center;
+  }
+
+  .flip{
+    transform: scaleX(-1);
+  }
+  
+  .home .image img {
+    height: 50rem;
+    width: 50rem;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: imageframeanimation 2.5s forwards;
+    animation-iteration-count: 1;
+  }
+
+  
+  
+  .home .content {
+    flex: 1 1 42rem;
+  }
+  
+  .home .content h3 {
+    color: var(--base-theme2-color);
+    font-size: 4rem;
+    padding-bottom: .5rem;
+    transition: var(--theme-transitiont-time);
+  }
+  
+  .home .content span {
+    font-size: 3rem;
+    color: var(--base-theme-color);
+    padding: .5rem 0;
+    display: block;
+    transition: var(--theme-transitiont-time);
+  }
+  
+  .home .content p {
+    font-size: 1.5rem;
+    color: var(--text-content-color);
+    padding: 1rem 0;
+    line-height: 2;
+    transition: var(--theme-transitiont-time);
+  }
+
+/* ----------  about*/
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .row .info-container {
+    flex: 1 1 42rem;
+  }
+  
+  .about .row .info-container h1 {
+    font-size: 3rem;
+    color: var(--base-theme2-color);
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+  }
+  
+  .about .row .info-container .box-container {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .row .info-container .box-container .box {
+    flex: 1 1 20rem;
+  }
+  
+  .about .row .info-container .box-container .box h3 {
+    font-size: 1.7rem;
+    color: var(--base-theme2-color);
+    padding: 1rem 0;
+    font-weight: normal;
+  }
+  
+  .about .row .info-container .box-container .box h3 span {
+    color: var(--base-theme2-color);
+    font-weight: lighter;
+  }
+  
+  .about .row .count-container {
+    flex: 1 1 42rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .about .row .count-container .box {
+    flex: 1 1 max-content;
+    /* flex: 1 1 20rem; */
+    padding: 3rem 4rem;
+    border-radius: .5rem;
+    background: var(--base-theme3-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  }
+  .about .row .count-container .box:hover {
+    background: var(--box-hover-color);
+    animation: growAnimation 0.25s forwards;
+  }
+  .about .row .count-container .box:hover p {
+    color: var(--text-hover-color);
+  }
+  
+  .about .row .count-container .box h3 {
+    font-size: 5rem;
+    color: var(--base-theme-color);
+  }
+  
+  .about .row .count-container .box p {
+    font-size: 2rem;
+    color: var(--text-content-color);
+  }
+  
+  .skills .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skills .box-container .box {
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border-radius: .5rem;
+    background: var(--base-theme3-color);
+  }
+  
+  .skills .box-container .box:hover {
+    background: var(--box-hover-color);
+    transition: background 0.3s ease;
+    animation: growAnimation 0.25s forwards;
+  }
+  
+  .skills .box-container .box:hover h3 {
+    color: var(--text-hover-color);
+    transition: color 0.3s ease;
+    /* transition-timing-function: ease; */
+  }
+  
+  .skills .box-container .box img {
+    height: 7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skills .box-container .box h3 {
+    color: var(--base-theme2-color);
+    font-size: 1.7rem;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+   /* Timeline Scroller */
+/* .timeline-handle{
+  border-radius: 0.8em;
+    width: 0.35em;
+    background-color: red;
+    height: 100%;
+    float: left;
+    z-index: 2;
+} */
+
+
+  /* .timeline .box-container {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+  
+  .timeline .box-container .box {
+    flex: 1 1 40rem;
+    margin-left: 2rem;
+    /* padding-left: 3.5rem; */
+    /* padding-top: 3rem; */
+    padding-bottom: 3rem;
+    border-left: 0.15rem solid var(--text-content-color);
+    position: relative;
+    /* z-index: -1; */ /*-1 value was making hover effect undetectable*/
+    /* background: rgba(var(--base-theme-color-backdrop), 0.7); */
+    /* backdrop-filter: blur(10px); */
+
+    transition: var(--theme-transitiont-time);
+  }
+  .timeline .box-container .box:hover {
+    /* change with hover margin+borderleft == margin+borderleft ewithout hover*/
+    margin-left: 1.6rem; /*2+0.15-0.55=1.6*/
+    border-left: 0.55rem solid var(--text-content-color);
+    transition: var(--theme-transitiont-time);
+  }
+
+  .timeline .box-container .box:last-child { 
+    padding-bottom: 0rem; /*removing the left border for last empty space on both work and project timelines*/
+    border-bottom: 0.3rem solid var(--text-content-color);
+    /* box-shadow: 0.35rem 0.35rem var(--base-theme-color); */
+  }
+  .timeline .box-container .box .backdrop{
+    padding: 2.5rem 3rem 2.5rem 3rem;
+    position: relative;  /*by commenting this icon moved with respect to box instead of backdrop class*/
+    background: rgba(var(--base-theme-color-backdrop), 0.7);
+    /* backdrop-filter: blur(10px); */
+    transition: var(--theme-transitiont-time);
+    /* box-shadow:0.35rem 0.35rem var(--base-theme-color) inset; */
+  }
+  /* .timeline .box-container .box::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: rgba(176, 169, 169, 0.7);
+    backdrop-filter: blur(10px);
+    opacity: 0.3;
+  } */
+/* .container {
+    position: relative;
+}
+.container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--color);
+    opacity: 0.3;
+} */
+  
+  .timeline .box-container .box .backdrop i {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    background: var(--base-theme-color);
+    color: var(--text-heading-color);
+    text-align: center;
+    position: absolute;
+    top: -1rem;
+    left: -2.5rem;
+    transition: var(--theme-transitiont-time);
+  }
+  
+  .timeline .box-container .box .backdrop span {
+    font-size: 1.7rem;
+    color: var(--text-heading-color);
+    border-radius: 5rem;
+    padding: .5rem 1.5rem;
+    background: var(--base-theme3-color);
+    transition: var(--theme-transitiont-time);
+  }
+  
+  .timeline .box-container .box .backdrop h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: var(--text-heading-color);
+    padding-top: 3rem;
+    font-weight: normal;
+    transition: var(--theme-transitiont-time);
+  }
+  
+  .timeline .box-container .box .backdrop p,.timeline .box-container .box .backdrop ul {
+    font-size: 1.5rem;
+    color: var(--text-content-color);
+    line-height: 2;
+  }
+  .timeline .box-container .box .backdrop ul {
+    padding-left: 3rem;
+  }
+  
+/* ---------- contact */
+.contact .row {
+    /* display: flex; */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* gap: 2rem; */
+    margin-top: 4rem;
+  }
+  
+  .contact .row .info-container {
+    /* width: 40rem; */
+    margin: auto; /*CENTER*/
+    text-align: center;
+  }
+  
+  .contact .row .info-container h1 {
+    font-size: 3rem;
+    color: var(--base-theme2-color);
+    padding-bottom: 1rem;
+  }
+  
+  .contact .row .info-container p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--text-content-color);
+    padding: 1rem 0;
+  }
+  
+  .contact .row .info-container .box-container {
+    padding: 2rem 0;
+  }
+  
+  .contact .row .info-container .share{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* to center flex boxes */
+    align-items: center;
+    justify-content: center;
+    column-gap: 2.5rem;
+
+  }
+  .contact .row .info-container .share a {
+    font-size: 5.5rem;
+    height: 10.5rem;
+    width: 10.5rem;
+    line-height: 10.5rem;
+    border-radius: 50%;
+    background: var(--base-theme3-color);
+    color: var(--base-theme-color);
+    /* color: #fff; */
+    text-align: center;
+    margin-right: .3rem;
+    margin-top: 2rem;
+    animation: shakeAnimation20deg 2.5s forwards
+  }
+  
+  .contact .row .info-container .share a:hover {
+    background: var(--base-theme-color);
+    color: var(--base-theme2-color);
+    animation: rotate360Animation 1.0s forwards;
+    outline: 0.2rem solid var(--base-theme-color);
+    outline-offset: 0.3rem;
+  }
+
+
+/*  */
+
+.mode-toggle{
+     color: aliceblue;
+ }
+ 
+ /* animation for typing */
+ .typing{
+    overflow: hidden;
+    border-right: .10em solid var(--base-theme-color);
+    white-space: nowrap;
+    animation: typing 2.5s forwards;
+    animation-iteration-count: 1;
+    /* animation-delay: 1000ms; */
+    font-size: 1.6rem;
+    /* opacity: 0; */
+    /* width: 0; */
+    /* text-align: center; */
+  }
+
+  /* START : Animations */
+  /* out effect */
+  @keyframes typing {
+    0% { width: 0%;}
+    10% { 
+      width:0%
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* in and out effect */
+   /* @keyframes typing {
+    0% { width: 0%
+    }
+    50% { 
+      width:100%
+    }
+    100% {
+      width: 0%;
+    }
+  }  */
+
+
+  @keyframes shakeAnimation {
+    0% { transform: rotate(5deg);
+    }
+    25% { 
+      transform: rotate(-5deg);
+    }
+    50%{
+      transform: rotate(5deg);
+    }
+    75%{
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes shakeAnimation20deg {
+    0% { transform: rotate(20deg);
+    }
+    25% { 
+      transform: rotate(-20deg);
+    }
+    50%{
+      transform: rotate(20deg);
+    }
+    75%{
+      transform: rotate(-20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes rotate360Animation {
+    0% { transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes growAnimation {
+    0% { transform: scale(1);
+    }
+    100% {
+      transform: scale(1.075);
+    }
+  }
+    /* image animation */
+    @keyframes imageframeanimation {
+      0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
+      }
+      25% { 
+          border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;/*bottom right*/      
+      }
+      50%{
+          border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;/*top right*/
+      }
+      75%{
+          border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;/*top left*/
+      }
+      100% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;/*bottom left*/
+      }
+    }
+    @keyframes scrollUp {
+      from {
+          transform: translateY(0);
+      }
+      to {
+          transform: translateY(-66%);
+      }
+    }
+    @keyframes expand {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+/* END : Animations */
+
+  @media (max-width: 1200px) {
+    html {
+      font-size: 55%;
+    }
+    section {
+      padding: 3rem 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 12vw;
+    }
+    .navbar a i {
+      padding: 0;
+    }
+    .navbar a span {
+      display: none;
+    }
+    .navbar a:hover {
+      padding-bottom: 3rem;
+      padding-top: 3rem;
+      border-radius: 25% 25% 0% 0%;
+    }
+    .home {
+      text-align: center;
+      gap: 2rem;
+    }
+    .home .image img {
+      height: 30rem;
+      width: 30rem;
+    }
+    .home .content h3 {
+      font-size: 3rem;
+    }
+    .home .content span {
+      font-size: 2.5rem;
+    }
+    /* .contact .row form .inputBox input {
+      width: 100%;
+      margin-bottom: 1rem;
+    } */
+  }
+
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  }

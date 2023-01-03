@@ -1,0 +1,58 @@
+.top-button{
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.65;
+    color:var(--text-heading-color);
+    z-index: 1000; /*without this, it was under timeline section this was not working*/
+}
+
+.top-button:hover {
+    opacity: 1;
+    transition: var(--hover-transitiont-time);	
+}
+
+.top-button button{
+    background-color: var(--base-theme-color);
+    color: var(--text-heading-color);
+    /* opacity: 0.65; */
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 0.8rem;
+    cursor: pointer;
+
+    /* for animation */
+    overflow: hidden;
+    height: 42px;
+    width: 38px;
+}
+
+.top-button button ul{
+    animation: moveToTopAmnimation 1.3s ease-in-out;
+    animation-iteration-count: infinite;
+}
+.top-button button ul li{
+    padding-bottom: 1.5rem;
+}
+
+@keyframes moveToTopAmnimation {
+    /* 11,-30 */
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-42px);/* height: 42px; of  .top-button button*/
+    }
+  }
+@media (max-width: 768px) {
+    .top-button{
+        bottom: 60px;
+        right: 4px;
+    }
+    .top-button button{
+        padding: 0.3rem 0.3rem;
+    }
+}

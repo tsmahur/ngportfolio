@@ -1,0 +1,14 @@
+<div id="top-id" class="top-button" title="Click to go to Top" [style.display]="showGoToTopBasedOnPosition?'inline':'none'">
+    <!-- scroll using href, add to the top most element -->
+    <!-- <a href="#top"><i class="fas fa-home"></i> Top</a>  -->
+
+    <!-- scroll using javascript -->
+    <button id="top-id-btn" (click)="scrollToTop($event)">
+        <ul>
+            <li><i class="fas fa-arrow-up fa-2x"></i></li>
+            <li><i class="fas fa-arrow-up fa-2x"></i></li>
+        </ul>
+        
+    </button>
+    <!-- <button id="top-id-btn" class="top-button"> -->
+</div>

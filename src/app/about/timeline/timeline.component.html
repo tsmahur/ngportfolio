@@ -1,0 +1,15 @@
+
+<section class="timeline">
+    <h1 class="heading"> Work <span>Experience</span> </h1>
+    <div class="box-container">
+        <app-timeline-card [timeline_data]="timeline_data" *ngFor="let timeline_data of timeline_data_array_work_experience"></app-timeline-card>
+    </div>
+</section> 
+<!-- -------------------------------------------------------------------------------------- -->
+    <!-- personal/team projects timeline  -->
+    <section class="timeline">
+        <h1 class="heading"> <span>My</span> Projects </h1>
+        <div class="box-container">
+            <app-timeline-card [timeline_data]="timeline_data" *ngFor="let timeline_data of timeline_data_array_my_projects"></app-timeline-card>
+        </div>
+    </section>

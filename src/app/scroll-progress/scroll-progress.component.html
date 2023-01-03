@@ -1,0 +1,5 @@
+<div class="scrollProgressContainer" (window:scroll)="onScrollProgresssBarUpdate($event)">
+    <div id="scrollProgressBar" [style.width]="scrollProgressBarWidth"></div>
+ </div>
+
+<app-go-to-top-button [showGoToTopBasedOnPosition]="showGoToTopBasedOnPosition" *ngIf="isGoToTopButtonEnabled"></app-go-to-top-button>

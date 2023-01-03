@@ -1,0 +1,37 @@
+/* .progressContainer{
+  position: fixed;
+  top : 2px;
+  left: 2px; 
+} */
+.progressBar{
+    position: relative;
+    width: 7rem; /*keeping same as image*/
+    height:7rem;
+    border-radius: 50%;
+    background:conic-gradient(var(--base-theme-color) 360deg,var(--base-backround-color) 0deg);
+    margin-bottom: 1rem;
+    /* opacity: 0.5; */
+    /* --center-- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0rem auto 1rem;
+
+  }
+  .progressBar::after{
+    content: '';
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background:var(--box-hover-color);
+  }
+  .progressValue{
+    /* text-align: center; */
+    font-size: 1.7rem;
+    font-weight: normal;
+    z-index: 10;
+    color: var(--text-hover-color);
+  
+  }
