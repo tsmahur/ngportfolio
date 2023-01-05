@@ -90,6 +90,7 @@
     /* object-fit: cover; */
     animation: zoomEffect 0.5s ;
     /* transition: 0.5 ease; */
+    object-fit: scale-down;
 }
 
 @keyframes zoomEffect{
