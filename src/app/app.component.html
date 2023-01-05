@@ -1,3 +1,4 @@
 
-<app-nav-bar></app-nav-bar>
+<!-- <app-nav-bar *ngIf="isShowNavBar"></app-nav-bar> -->
+<app-nav-bar *ngIf="this.getIsShowNavNar()"></app-nav-bar>
 <router-outlet></router-outlet>

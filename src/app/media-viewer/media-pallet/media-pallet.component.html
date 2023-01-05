@@ -1,0 +1,13 @@
+<div class="bottom">
+    <div class="count-display">
+       {{activeMediaIndex+1}} of {{this.mediaData.length}}
+    </div>
+    <div id="pallet-id"class="viewer-pallet-media-box" [scrollLeft]="scrollPos">
+    
+        <!-- media caard -->
+        <app-media-pallet-card [src]="data.url" [isImage]="data.isImage" [index]="i" *ngFor="let data of mediaData;let i=index"
+        [activeMediaIndex]="activeMediaIndex"
+        (currentMediaIndexEmitter)="updateCurrentMediaClickedIndex($event)"></app-media-pallet-card>
+    
+    </div>
+</div>

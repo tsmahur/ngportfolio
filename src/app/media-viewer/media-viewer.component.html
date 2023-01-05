@@ -1,0 +1,36 @@
+<!-- by default display:none, but on click of image display:block -->
+<div class="viewer-modal">
+    <!-- <button (click)="onClose()" class="close">Close</button> -->
+    <span (click)="onClose()" class="close viewer-controls">&times;</span>
+
+
+
+    <div class="media-display">
+        <!-- <div class="media-center"> -->
+
+        <img [id]="index" [src]="src" class="viewer-media-image" alt="" *ngIf="isImage">
+        <!-- <img [id]="index" [src]="src" class="viewer-media-image media-center" alt=""> -->
+
+        <!-- <img [src]="src" class="media-image" alt="" *ngIf="isVideo"> -->
+        <!-- for video generte thum, and on clik play that -->
+        <video [id]="index" [src]="src" class="viewer-media-image" alt=""  *ngIf="!isImage" controls muted></video>
+
+    <!-- </div> -->
+
+
+    </div>
+
+    <!-- <span class="controls"> -->
+        <span class="left-nav-button viewer-controls" (click)="nextOrPrevious(-1)" (window:keydown)="handleKeyEventForMediaViewer($event)">&lt;</span>
+        <!-- &gt; &#10162; -->
+        <span class="right-nav-button viewer-controls" (click)="nextOrPrevious(1)">&gt;</span>
+        <span class="help-button viewer-controls" (click)="mediaViewerHelp()"
+            [title]="helpText"
+            >&#9432;</span>
+    <!-- </span> -->
+    <app-media-pallet [mediaData]="mediaData"
+        [activeMediaIndex]="activeMediaIndex"
+        (currentMediaIndexEmitter)="updateCurrentMediaClickedIndex($event)"></app-media-pallet>
+
+
+</div>

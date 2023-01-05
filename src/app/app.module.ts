@@ -15,6 +15,7 @@ import { SkillCardComponent } from './about/skills/skill-card/skill-card.compone
 import { TimelineCardComponent } from './about/timeline/timeline-card/timeline-card.component';
 import { ScrollProgressComponent } from './scroll-progress/scroll-progress.component';
 import { GoToTopButtonComponent } from './scroll-progress/go-to-top-button/go-to-top-button.component';
+import { TravelModule } from './travel/travel.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GoToTopButtonComponent } from './scroll-progress/go-to-top-button/go-to
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TravelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

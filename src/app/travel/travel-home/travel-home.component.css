@@ -1,0 +1,27 @@
+.media-box{
+    width: 92vw;
+    /* height: 100vh; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 20px;
+    /* background: rgb(162, 141, 141); */
+    background: var(--base-theme3-color);
+    margin: auto;
+}
+
+.viewer-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    /* extra */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: block;
+    transition:  opacity 0.15s linear ;
+}

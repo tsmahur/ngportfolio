@@ -1,0 +1,43 @@
+.viewer-pallet-media-box {
+    /* width: 101vw; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* padding: 4px 0px; */
+    /* background: rgb(162, 141, 141); */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+
+    /* moving pallet to down */
+    /* position: fixed;
+    bottom: 80px;
+    left: 0; */
+    /* bottom: 0; */
+}
+.count-display{
+    color: white;
+    text-align: center;
+    font-size: small;
+}
+/* hiding scroll bar for chrome,opera,safari */
+/* .viewer-pallet-media-box::-webkit-scrollbar{
+    display: none;
+} */
+
+/* below setting are for chrome,opera,safari only */
+.viewer-pallet-media-box::-webkit-scrollbar {
+    /* width: 0.5rem; */
+    height: 0.25rem;
+}
+
+.viewer-pallet-media-box::-webkit-scrollbar-track {
+    background: var(--base-backround-color);
+    /* background: red */
+}
+
+.viewer-pallet-media-box::-webkit-scrollbar-thumb {
+    background: var(--base-theme-color);
+    /* background: yellow; */
+    border-radius: 5rem;
+} 

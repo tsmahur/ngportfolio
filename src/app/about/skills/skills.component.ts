@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-skills',
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class SkillsComponent implements OnInit {
 
   // assets='./assets/' //for deployment
-  assets='../../../assets/' //for local
+  // assets='../../../assets/' //for local
+  assets=environment.assets;
 
   skills=[
     {

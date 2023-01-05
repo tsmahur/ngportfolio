@@ -1,0 +1,23 @@
+
+    <h1 class="heading">Travel <span>Gallery</span> </h1>
+
+    <!-- <app-media-viewer></app-media-viewer> -->
+<div class="media-box">
+
+    <!-- (currentMediaIndexEmitter)="updateCurrentMediaClickedIndex($event)" is depreceated as not changing image on click in media-box, as media-viewer will overlay the screen and every thing will be controlled from there -->
+    <app-media-card [src]="data.url" [isImage]="data.isImage" [index]="i" *ngFor="let data of mediaData;let i=index" (currentMediaIndexEmitter)="updateCurrentMediaClickedIndex($event)"></app-media-card>
+    <!-- <div class="media-thumbnail">
+        <img src="https://instagram.fdel14-1.fna.fbcdn.net/v/t51.2885-15/322052282_1620473315050694_5967929200939711725_n.jpg?stp=c0.588.1512.1512a_dst-jpg_e15_s320x320&_nc_ht=instagram.fdel14-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=BDwiNI0XO9IAX8S82KA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBUDVSQKmYv1PY89q8HtF6KJ8uHHY1jJl58JOKa_8zBvg&oe=63B73400&_nc_sid=8fd12b"
+        referrerpolicy="no-referrer"
+         class="media-image" alt="">
+
+    </div> -->   
+
+</div>
+
+
+<!-- redirect to travel page -->
+
+
+    <app-media-viewer  [mediaData]="mediaData" [currentMediaIndex]="currentMediaIndex" *ngIf="isMediaViewerOpen" (closeEmitter)="closeMediaViewer($event)"></app-media-viewer>
+

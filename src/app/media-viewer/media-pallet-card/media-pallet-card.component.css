@@ -1,0 +1,41 @@
+.pallet-media-thumbnail{
+    width: 12vw;
+    height: 12vh;
+    /* background: #050505; */
+    /* border: 1px solid #ffffff; */
+    padding: 0 5px;
+    position: relative;
+    cursor: pointer;
+}
+.pallet-media-image{
+    width: 100%;
+    height: 100%;
+    /* width: 200px; */
+    /* height: 200px; */
+    object-fit: cover;
+    /* transition: 0.25s ease; */
+}
+.pallet-media-thumbnail:hover{
+    opacity: 0.5;
+    /* filter: grayscale(); */
+    transform: scale(0.98);
+    transition: 0.25s ease;
+}
+
+.active-media{
+    border: 3px solid #e41313;
+    transition: 0.25s ease;
+}
+
+/* for this to work make pallet-media-thumbnail as position: relative */
+.media-type-logo{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    padding: 5px;
+}
+.media-type-logo > svg{
+    fill: var(--base-theme-color);
+}
